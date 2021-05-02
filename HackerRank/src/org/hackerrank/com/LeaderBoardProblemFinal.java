@@ -6,7 +6,7 @@ import java.util.List;
 public class LeaderBoardProblemFinal {
 
 	public static void main(String[] args) {
-		/* This array will always be the sorted array in the descending order. */
+		/* This array will always be the sorted array in the descending order.*/
 		Integer[] score = { 100, 100, 50, 40, 40, 20, 10 };
 		Integer[] aliceScore = { 5, 25, 50, 120 };
 		for (int i : climbingLeaderboard(Arrays.asList(score), Arrays.asList(aliceScore))) {
