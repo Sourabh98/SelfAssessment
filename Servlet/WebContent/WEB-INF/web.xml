@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<servlet>
+		<servlet-name>ws</servlet-name>
+		<servlet-class>mypack.WelcomeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ws</servlet-name>
+		<url-pattern>/welcomeServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>exitServlet</servlet-name>
+		<servlet-class>mypack.ExitServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>exitServlet</servlet-name>
+		<url-pattern>/exitServlet</url-pattern>
+	</servlet-mapping>
+	<listener>
+		<listener-class>mypack.MyListener</listener-class>
+	</listener>
+	<session-config>
+		<session-timeout>2</session-timeout>
+	</session-config>
+	<servlet>
+		<servlet-name>as</servlet-name>
+		<servlet-class>mypack.AdminServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>as</servlet-name>
+		<url-pattern>/adminServlet</url-pattern>
+	</servlet-mapping>
+
+	<!--Below is the mapping for the new Servlets defined in Filter package.. -->
+	<servlet>
+		<servlet-name>welcomeServlet2</servlet-name>
+		<servlet-class>filters.WelcomeServlet2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>welcomeServlet2</servlet-name>
+		<url-pattern>/welcomeServlet2</url-pattern>
+	</servlet-mapping>
+	<!--Below is the mapping for the filter which will get invoked when there 
+		would be request from the client for the WelcomeServlet2, this filter will 
+		do the pre processing and the post processing -->
+	<filter>
+		<filter-name>singleEntryFilter</filter-name>
+		<filter-class>filters.SingleEntryFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>singleEntryFilter</filter-name>
+		<url-pattern>/welcomeServlet2</url-pattern>
+		<!-- Below two configurations are used to mention that the filter should 
+			get invoked when the Request comes directly for the welcomeServlet2 or it 
+			is forwarded by some other servlet -->
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>exitServlet2</servlet-name>
+		<servlet-class>filters.ExitServlet2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>exitServlet2</servlet-name>
+		<url-pattern>/exitServlet2</url-pattern>
+	</servlet-mapping>
+	<filter-mapping>
+		<filter-name>singleEntryFilter</filter-name>
+		<url-pattern>/exitServlet2</url-pattern>
+		<!-- Below two configurations are used to mention that the filter should 
+			get invoked when the Request comes directly for the exitServlet2 or it 
+			is forwarded by some other servlet -->
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	
+
+</web-app>

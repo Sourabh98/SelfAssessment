@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+
+<servlet>
+<servlet-name>s1</servlet-name>
+<!--This is the interceptor which will intercept all the request coming from the client and will figure which Service and service method needs to be 
+invoked on the basis of the service URI and the request type, object of this servlet will be referenced by s1 variable, implementation of this servlet is provided by
+the Jersey implemenation so we will have to include those jar files into out project and deploy those files on the server as well, i think if we will put the jar files
+in the lib folder they will get deployed to the server when we will deploy the Services   -->
+<servlet-class>
+com.sun.jersey.spi.container.servlet.ServletContainer
+</servlet-class>
+<init-param>
+<!-- In this property we will provide the name of the package where our service classes resides the ServletContainer servlet will read all these services and the annotations and will map the coming
+request to right service and it's respective method, we don't need to give the whole path we just need to give the package name which we have given inside the Java resources folder.
+If we have services in multiple packages then we can give all the package names in init param.-->
+<param-name>com.sun.jersey.config.property.packages</param-name>
+<param-value>resources</param-value>
+</init-param>
+<!--load on startup property uses to create the Servlet object at the time of deployment 1 set that property to true, so while setting this true this will create the ServletContainer object at 
+deployment time and that Servlet will look into the service package to figure out which service needs to be invoked when request comes  -->
+<load-on-startup>1</load-on-startup>
+</servlet>
+<!--servlet mapping uses to map a servlet to a particular URL so if any request will come from the relative URL like /rest/* then it would be intercepted by the Servlet s1   -->
+<servlet-mapping>
+<servlet-name>s1</servlet-name>
+<url-pattern>/rest/*</url-pattern>
+</servlet-mapping>
+</web-app>

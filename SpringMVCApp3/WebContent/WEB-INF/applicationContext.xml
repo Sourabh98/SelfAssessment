@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<!-- So when will ask the IOC container for this datasource bean the container will inject the below dependencies through setter method then we can ask the datasource for the connection by using these
+dependencies the datasource will provide us the connection  -->
+<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+<property name="url" value="jdbc:oracle:thin:@localhost:1521/pdborcl"/>
+<property name="username" value="SYSTEM"/>
+<property name="password" value="Sourabhcool10"/>
+</bean>
+<!-- here we are injecting the datasource as the dependency for the UserDao so when the object of the UserDao will be created datasource dependencies will get injected using the setter injection..   -->
+<bean id="userDao" class="dao.UserDao">
+<property name="dataSource" ref="ds"/>
+</bean>
+</beans>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+<bean id="num1" class="entity.Complex">
+<constructor-arg value="2"/>
+<constructor-arg value="3" />
+</bean>
+<bean id="num2" class="entity.Complex">
+<constructor-arg value="6"/>
+<constructor-arg value="6"/>
+</bean>
+<bean id="rational2" class="entity.Rational2" factory-method="getRational2"/>
+<bean id="complex2" class="entity.Complex2" factory-method="getComplex2" scope="prototype"/>
+
+
+<bean id="nf" class="iocContainer.NumberFactory">
+<constructor-arg value="rational"/>
+</bean>
+<bean id="num" factory-bean="nf" factory-method="getNumber"/>
+
+<bean id="trainer" class="entity.Trainer">
+<!-- here we are using setter method injection  -->
+<property name="batches">
+<list>
+<value>A</value>
+<value>B</value>
+<value>C</value>
+<value>D</value>
+</list>
+</property>
+<property name="name" value="Sourabh"/>
+</bean>
+<!--Configuration for the order bean, we will inject as a dependency in the customer bean -->
+<bean id="order1" class="entity.Order">
+<constructor-arg value="10" type="int"/>
+<constructor-arg value="iphone" type="String"/>
+<constructor-arg value="60000" type="int"/>
+<constructor-arg value="Shipped" type="String"/>
+</bean>
+<bean id="order2" class="entity.Order">
+<constructor-arg value="12" type="int"/>
+<constructor-arg value="iphone s3" type="String"/>
+<constructor-arg value="600000" type="int"/>
+<constructor-arg value="Shipped" type="String"/>
+</bean>
+<bean id="order3" class="entity.Order">
+<constructor-arg value="12" type="int"/>
+<constructor-arg value="iphone s4" type="String"/>
+<constructor-arg value="650000" type="int"/>
+<constructor-arg value="Shipped" type="String"/>
+</bean>
+
+<!-- Here we are creating the Customer Bean and injecting the dependencies in it through constructor injection   -->
+<bean id="customer1" class="entity.Customer">
+<constructor-arg value="Raman Sharma" type="String"/>
+<constructor-arg>
+<set>
+<ref bean="order1"/>
+<ref bean="order2"/>
+<ref bean="order3"/>
+</set>
+</constructor-arg>
+</bean>
+
+<!-- Here we are creating the Customer Bean and injecting the dependencies in customer bean through setter method injection   -->
+<bean id="customer2" class="entity.Customer">
+<property name="customerName" value="Chaman Chutiya"/>
+<property name="Orders">
+<set>
+<ref bean="order1"/>
+<ref bean="order2"/>
+<ref bean="order3"/>
+</set>
+</property>
+</bean>
+
+<!--Configuration for Singleton to Prototype problem   -->
+<bean id="tic" class="entity.Ticket" scope="prototype"/>
+<!--now in this by default it will use the setter injection to inject the dependencies if we want to inject the dependencies through constructor then we will have to mention autowire="constructor"   -->
+<bean id="conductor" class="entity.DishonestConductor" autowire="byType"/>
+
+<!--This is for the solution of Singleton to Prototype programmatic approach  -->
+<bean id="honestConductor" class="entity.HonestConductor"/>
+<!--Solution for singleton to prototype problem using declarative approach   -->
+<bean id="honestConductorViaLookupMethod" class="entity.Conductor">
+<lookup-method name="getTicket" bean="tic"/>
+</bean>
+
+<bean id="a" class="entity.A" scope="prototype"/>
+<bean id="b1" class="entity.B" autowire="byType"/>
+<bean id="b2" class="entity.B" autowire="byType" init-method="postCreate" destroy-method="preDestroy">
+</bean>
+</beans>
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/web/com.springsource.org.apache.commons.fileupload-1.2.0.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/web/com.springsource.org.apache.commons.httpclient-3.1.0.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/web/com.springsource.org.codehaus.jackson.mapper-1.0.0.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/web/org.springframework.oxm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/web/org.springframework.web.portlet-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/web/org.springframework.web.servlet-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/web/org.springframework.web.struts-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/web/org.springframework.web-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/core/com.springsource.org.apache.commons.logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/core/com.springsource.org.apache.log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/core/jmxtools-1.2.1.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/core/org.springframework.asm-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/core/org.springframework.beans-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/core/org.springframework.context-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/core/org.springframework.core-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Spring Hibernate jars/spring/core/org.springframework.expression-3.0.1.RELEASE-A.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/annotations-api.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/catalina.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/catalina-ant.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/catalina-ha.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/catalina-tribes.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/ecj-4.3.1.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/el-api.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/jasper.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/jasper-el.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/tomcat7-websocket.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/tomcat-api.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/tomcat-i18n-es.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/tomcat-i18n-fr.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/tomcat-i18n-ja.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/tomcat-jdbc.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/tomcat-util.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/apache-tomcat-7.0.52/lib/websocket-api.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

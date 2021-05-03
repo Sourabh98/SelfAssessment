@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/FastInfoset-1.2.2.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/jaxb-api-2.1.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/jaxb-impl-2.1.10.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/jdom-1.0.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/jersey-atom-1.0.2.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/jersey-client-1.0.2.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/jersey-core-1.0.2.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/jersey-fastinfoset-1.0.2.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/jersey-json-1.0.2.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/jersey-multipart-1.0.2.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/jersey-server-1.0.2.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/jettison-1.0.1.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/jsr311-api-1.0.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/mail-1.4.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/rome-0.9.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/webservices jars2/rest jars/stax-api-1.0-2.jar"/>
+	<classpathentry kind="lib" path="E:/TechMentro Classes data/Oracle12C JDBC driver/ojdbc7.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

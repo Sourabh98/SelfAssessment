@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--spring-context-3.0.xsd, this is the xsd file where the context namspace 
+	is defined, here context is like a reference variable name so wherever we 
+	wanted to use the elements of the context namspace then we can refer them 
+	by using the context variable name, here we have made the beans as default 
+	name space so we can refer the elements of this namespace directly without 
+	needing any variable to refer them -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- below we are providing name of the package where controller classes 
+		are defined /*All the classes of the given package and the annotations are 
+		read at deployment time and put into the dispatcher servlet object which 
+		is also created at deployment time so whenever the request will come for 
+		any controller's request processing method dispatcher servlet will * figure 
+		out which controller and request processing method needs to invoke for that 
+		particular request. we havn't provided any view to the dS so the default 
+		view will get used which invokes the JSP*/ -->
+	<context:component-scan
+		base-package="controllers"></context:component-scan>
+
+	<!--Now here we are using setter injection to inject the dependencies, this 
+		bean id will be used by the view which will provide the name of the page 
+		which is returned by the controller and then this view resolver will provide 
+		the complete URL back to the view component, we havn't provided any view 
+		to the dS so the default view will get used which invokes the JSP, now that 
+		default view will extract the Model reference and view name from the ModelAndView 
+		object which is given by DS and will put the Model reference in the request 
+		scope with the name 'message' and will give the view name to the view resolver -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<!--setPrefix and setSuffix methods of InternalResourceViewResolver will 
+			get invoked to inject the given values in viewresolver bean so the complete 
+			url which would be given back by viewresolver would be /views/result.jsp 
+			to the view and then that view will invoke that JSP page, this views folder 
+			would be inside the webcontent folder, the folder structure have to be in 
+			this way as what should be location of the folders is already defined.. -->
+		<property name="prefix" value="/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+</beans>

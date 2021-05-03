@@ -1,0 +1,6 @@
+com\telusko\demorest\Alien.class
+com\telusko\demorest\AlienRepository.class
+com\telusko\demorest\AlienResource.class
+com\telusko\demorest\AlienList.class
+com\telusko\demorest\MyResource.class
+com\telusko\demorest\AlienDao.class

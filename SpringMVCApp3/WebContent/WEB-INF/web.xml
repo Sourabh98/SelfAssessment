@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+ <servlet>
+ <servlet-name>frontController</servlet-name>
+ <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name>frontController</servlet-name>
+ <url-pattern>*.spring</url-pattern>
+ </servlet-mapping>
+ <!--This listener entry is for making the IOC container beans available to the web context scope, this listener will get invoked at the time of the deployment of the application hence the beans which
+ are configured in the IOC container context.xml will make available in web-context scope at the time of the deployment..   -->
+ <listener>
+ <listener-class>
+ org.springframework.web.context.ContextLoaderListener
+ </listener-class>
+ </listener>
+</web-app>
